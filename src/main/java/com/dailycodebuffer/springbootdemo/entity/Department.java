@@ -1,5 +1,9 @@
 package com.dailycodebuffer.springbootdemo.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
@@ -8,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
-@Entity
+/*@Entity
 public class Department {
 
     @Id
@@ -16,7 +20,7 @@ public class Department {
     private long departmentId;
 
     @NotBlank(message="please add department name")
- /*   @Length(max=5,min=1)
+ *//*   @Length(max=5,min=1)
     @Size(max=10,min=0)
     @Email
     @Positive
@@ -25,7 +29,7 @@ public class Department {
     @Future
     @FutureOrPresent
     @Past
-    @PastOrPresent*/
+    @PastOrPresent*//*
 
     private String departmentName;
     private String departmentAddress;
@@ -83,4 +87,32 @@ public class Department {
                 ", departmentCode='" + departmentCode + '\'' +
                 '}';
     }
+}*/
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Department {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long departmentId;
+
+    @NotBlank(message = "Please Add Department Name")
+    /*@Length(max = 5,min =1)
+    @Size(max = 10, min = 0)
+    @Email
+    @Positive
+    @Negative
+    @PositiveOrZero
+    @NegativeOrZero
+    @Future
+    @FutureOrPresent
+    @Past
+    @PastOrPresent*/
+    private String departmentName;
+    private String departmentAddress;
+    private String departmentCode;
 }
