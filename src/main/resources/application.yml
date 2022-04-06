@@ -25,6 +25,13 @@ spring:
 welcome:
   message: Welocme to java springboot world !!!
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
 ---
 
 spring:
@@ -41,13 +48,6 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
 welcome:
   message: Welocme to java springboot world !!!
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-#        exclude: "env,beans"
 
 ---
 
